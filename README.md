@@ -9,12 +9,12 @@ LABELS
 -->
 
 
-# [Insert project name]
+# Webs scraper
 
 
 ## About the project
 
-[insert description]
+Extracts data from a website, here Asos. Then, the data is processed with pandas and finally outputed inside a csv file.
 
 <br>
 
