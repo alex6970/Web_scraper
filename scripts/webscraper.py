@@ -1,5 +1,4 @@
 import os
-import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import pandas as pd
@@ -17,14 +16,10 @@ browser.get(url)
 
 soup = BeautifulSoup(browser.page_source, 'html.parser')
 
-# seven_day = soup.find(id="seven-day-forecast")
-# forecast_items = seven_day.find_all(class_="tombstone-container")
-
 brands_list = []
 description_list = []
 price_list = []
 
-sum = 0
 
 product = soup.find_all('div', attrs={'class':'DT5BTM w8MdNG cYylcv QylWsg _75qWlu iOzucJ JT3_zV DvypSJ'}) # finds each html box containing a product
 
