@@ -11,9 +11,10 @@ df = pd.DataFrame(columns=['Brand', 'Model', 'Description', 'Color', 'Price'])
 DRIVER_PATH = './resources/chromedriver.exe'
 browser = webdriver.Chrome(executable_path=DRIVER_PATH)
 
-url = 'https://www.zalando.fr/bijoux-luxe-homme/'
+url = 'https://www.zalando.fr/sacs-femme/' # Can change the url
 browser.get(url)
 # time.sleep(60)
+
 
 soup = BeautifulSoup(browser.page_source, 'html.parser')
 
@@ -30,8 +31,6 @@ for item in product:
     brand = item.find('span', attrs={'class':'SZKKsK u-6V88 ka2E9k uMhVZi FxZV-M pVrzNP ZkIJC- r9BRio qXofat EKabf7 nBq1-s _2MyPg2'})
 
     if brand is not None : # in case the article is not a product (can be an ad)
-
-
         description = item.find('h3', attrs={'class':'RYghuO u-6V88 ka2E9k uMhVZi FxZV-M pVrzNP ZkIJC- r9BRio qXofat EKabf7 nBq1-s _2MyPg2'})
         price = item.select('header div._0xLoFW._78xIQ- span.RYghuO.u-6V88.ka2E9k.uMhVZi')
 
@@ -41,7 +40,6 @@ for item in product:
 
         else :
             price_list.append(float(price[0].get_text(strip=True).replace(',', '.').replace('€', '').encode('ascii', 'ignore')))
-
 
         # Cleaning description (spliting)
         desc_words = description.get_text(strip=True).split(' - ')
@@ -56,7 +54,6 @@ for item in product:
             descript_list.append(desc_words[0])
             color_list.append(desc_words[1])
 
-
         # Brand
         brands_list.append(brand.get_text(strip=True))
 
@@ -67,4 +64,6 @@ df['Description'] = descript_list
 df['Color'] = color_list
 df['Price'] = price_list
 
+
 print(df.iloc[50])
+print(len(df), "items have been scraped from this page.")
