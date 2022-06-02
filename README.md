@@ -14,7 +14,7 @@ LABELS
 
 ## About the project
 
-Extracts data from a website, here Asos. Then, the data is processed with pandas and finally outputed inside a csv file.
+Web scraper that retrieves all the data (brand, description, color, ..) of the items of a category on the Zalando site. The data is cleaned, put in a dataframe and transferred to a csv file.
 
 <br>
 
