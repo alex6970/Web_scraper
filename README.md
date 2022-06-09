@@ -14,7 +14,7 @@ LABELS
 
 ## About the project
 
-Web scraper that retrieves all the data (brand, description, color, ..) of the items of a category on the Zalando site. The data is cleaned, put in a dataframe and transferred to a csv file.
+Simple webscraper script that retrieves all the data (brand, description, colour, ..) of the items of a category in the Zalando website. The data is cleaned, placed in a dataframe and transferred to a csv file.
 
 <br>
 
@@ -25,7 +25,6 @@ Web scraper that retrieves all the data (brand, description, color, ..) of the i
 - [Project Organization](#project-organization)
 - [Features and uses](#features-and-uses-)
 - [Technologies & packages](#technologies--packages-)
-- [Screenshots](#screenshots-)
 - [Credits](#credits-)
 
 <br>
@@ -34,17 +33,16 @@ Web scraper that retrieves all the data (brand, description, color, ..) of the i
 
 ## Project Organization
 
-
+    │
+    ├── resources    
+    │   │
+    │   └── chromedriver.exe          <- Google chrome driver (downloaded)
+    │    
     ├── scripts
-    │   ├── some_script.py            <- App main script
     │   │
-    │   ├── another.py                <- Another script
-    │   │
-    │   └── another_one.py            <- Yet another
+    │   └── webscraper.py             <- Webscraper script
     │
     ├── LICENSE                       <- MIT License
-    │
-    ├── Notes.md                      <- Notes along the project.
     │
     └── README.md                     <- The top-level README
 
@@ -54,7 +52,10 @@ Web scraper that retrieves all the data (brand, description, color, ..) of the i
 
 ## Features and uses 💻
 
-[Insert features and uses]
+The script allows user to connect to the website via submitted url (Zalando).
+Extracts brand, colour, product name and category of each item of the current page.
+Switches the page (until submitted number) and does the same operations.
+Extracted data is placed inside csv file (products.csv)
 
 <br>
 
@@ -62,34 +63,17 @@ Web scraper that retrieves all the data (brand, description, color, ..) of the i
 
 ## Technologies & packages 🔧
 
-&rarr; [insert technologies & packages]
-<!---
-or `pip freeze > requirements.txt`
--->
-
-
+&rarr; BeautifulSoup  
+&rarr; Selenium   
+&rarr; Pandas   
+&rarr; Python  
 
 <br>
-
-
-## Screenshots 📷
-
-- #### One screenshot
-
-<div align="center">
-    <img src="PATH FROM PROJECT" alt="Logo" width="400" height="100%">
-</div>
-
-- #### Another screenshot
-
-<div align="center">
-    <img src="PATH FROM PROJECT" alt="Logo" width="400" height="100%">
-</div>
-<br>
-
 
 
 ## Credits 🤝
 
 - [Stack Overflow](https://stackoverflow.com/)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/what-is-web-scraping-and-how-to-use-it/)
+- [ScrapingBee](https://www.scrapingbee.com/blog/web-scraping-101-with-python/)
 - ...

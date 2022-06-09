@@ -11,7 +11,7 @@ df = pd.DataFrame(columns=['Brand', 'Model', 'Description', 'Color', 'Price'])
 DRIVER_PATH = './resources/chromedriver.exe'
 browser = webdriver.Chrome(executable_path=DRIVER_PATH)
 
-url = 'https://www.zalando.fr/t-shirts-polos-homme/' # Can change the url
+url = 'https://www.zalando.fr/chaussures-homme/' # Can change the url
 browser.get(url)
 # time.sleep(60)
 soup = BeautifulSoup(browser.page_source, 'html.parser')
@@ -32,8 +32,8 @@ price_list = []
 
 page = 1
 
-while page != 10: # Chosen number of pages to  scrap for the category (n+1)
-    url = f'https://www.zalando.fr/t-shirts-polos-homme/?p={page}' # Can change the url
+while page != 5: # Chosen number of pages to  scrap for the category (n+1)
+    url = f'{url}?p={page}' # Can change the url
     browser.get(url)
     soup = BeautifulSoup(browser.page_source, 'html.parser')
 
